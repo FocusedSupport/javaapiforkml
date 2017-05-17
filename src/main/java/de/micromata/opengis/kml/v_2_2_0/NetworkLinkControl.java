@@ -219,7 +219,7 @@ public class NetworkLinkControl implements Cloneable
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractViewGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
+    @XmlElementRef(name = "AbstractViewGroup", namespace = "http://www.opengis.net/kml/2.2")
     protected AbstractView abstractView;
     @XmlElement(name = "NetworkLinkControlSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
@@ -470,9 +470,9 @@ public class NetworkLinkControl implements Cloneable
      * 
      * @return
      *     possible object is
+     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link AbstractView}{@code>}
      *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -484,9 +484,9 @@ public class NetworkLinkControl implements Cloneable
      * 
      * @param value
      *     allowed object is
+     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link AbstractView}{@code>}
      *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -673,30 +673,14 @@ public class NetworkLinkControl implements Cloneable
      * this.setUpdate(update); </code>
      * 
      * 
-     * @param createOrDeleteOrChange
-     *     required parameter
      * @param targetHref
+     *     required parameter
+     * @param createOrDeleteOrChange
      *     required parameter
      */
     public Update createAndSetUpdate(final String targetHref, final List<Object> createOrDeleteOrChange) {
         Update newValue = new Update(targetHref, createOrDeleteOrChange);
         this.setUpdate(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link LookAt} and set it to abstractView.
-     * 
-     * This method is a short version for:
-     * <code>
-     * LookAt lookAt = new LookAt();
-     * this.setAbstractView(lookAt); </code>
-     * 
-     * 
-     */
-    public LookAt createAndSetLookAt() {
-        LookAt newValue = new LookAt();
-        this.setAbstractView(newValue);
         return newValue;
     }
 
@@ -712,6 +696,22 @@ public class NetworkLinkControl implements Cloneable
      */
     public Camera createAndSetCamera() {
         Camera newValue = new Camera();
+        this.setAbstractView(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link LookAt} and set it to abstractView.
+     * 
+     * This method is a short version for:
+     * <code>
+     * LookAt lookAt = new LookAt();
+     * this.setAbstractView(lookAt); </code>
+     * 
+     * 
+     */
+    public LookAt createAndSetLookAt() {
+        LookAt newValue = new LookAt();
         this.setAbstractView(newValue);
         return newValue;
     }

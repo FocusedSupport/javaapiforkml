@@ -84,13 +84,13 @@ public class DependentLocality implements Cloneable
     /**
      * Value constructor with only mandatory fields
      * 
-     * @param postBox
-     *     required parameter
-     * @param postOffice
-     *     required parameter
      * @param postalRoute
      *     required parameter
+     * @param postBox
+     *     required parameter
      * @param largeMailUser
+     *     required parameter
+     * @param postOffice
      *     required parameter
      */
     public DependentLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -722,9 +722,9 @@ public class DependentLocality implements Cloneable
      * this.setPostalRoute(postalRoute); </code>
      * 
      * 
-     * @param postalRouteName
-     *     required parameter
      * @param postalRouteNumber
+     *     required parameter
+     * @param postalRouteName
      *     required parameter
      */
     public PostalRoute createAndSetPostalRoute(final List<PostalRoute.PostalRouteName> postalRouteName, final PostalRoute.PostalRouteNumber postalRouteNumber) {
@@ -742,11 +742,11 @@ public class DependentLocality implements Cloneable
      * this.setThoroughfare(thoroughfare); </code>
      * 
      * 
-     * @param postalCode
+     * @param firm
      *     required parameter
      * @param premise
      *     required parameter
-     * @param firm
+     * @param postalCode
      *     required parameter
      * @param dependentLocality
      *     required parameter
@@ -768,9 +768,9 @@ public class DependentLocality implements Cloneable
      * 
      * @param premiseNumber
      *     required parameter
-     * @param premiseNumberRange
-     *     required parameter
      * @param premiseLocation
+     *     required parameter
+     * @param premiseNumberRange
      *     required parameter
      */
     public Premise createAndSetPremise(final Premise.PremiseLocation premiseLocation, final List<PremiseNumber> premiseNumber, final Premise.PremiseNumberRange premiseNumberRange) {
@@ -788,13 +788,13 @@ public class DependentLocality implements Cloneable
      * this.setDependentLocality(dependentLocality); </code>
      * 
      * 
-     * @param postBox
-     *     required parameter
-     * @param postOffice
-     *     required parameter
      * @param postalRoute
      *     required parameter
+     * @param postBox
+     *     required parameter
      * @param largeMailUser
+     *     required parameter
+     * @param postOffice
      *     required parameter
      */
     public DependentLocality createAndSetDependentLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {

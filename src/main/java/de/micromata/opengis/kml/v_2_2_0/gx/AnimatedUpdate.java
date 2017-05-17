@@ -55,8 +55,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AnimatedUpdateType", propOrder = {
     "duration",
-    "update",
-    "delayedStart"
+    "update"
 })
 @XmlRootElement(name = "AnimatedUpdate", namespace = "http://www.google.com/kml/ext/2.2")
 public class AnimatedUpdate
@@ -137,8 +136,6 @@ public class AnimatedUpdate
      */
     @XmlElement(name = "Update", namespace = "http://www.opengis.net/kml/2.2")
     protected Update update;
-    @XmlElement(defaultValue = "0.0")
-    protected double delayedStart;
 
     public AnimatedUpdate() {
         super();
@@ -192,30 +189,6 @@ public class AnimatedUpdate
         this.update = value;
     }
 
-    /**
-     * @see delayedStart
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double}
-     *     
-     */
-    public double getDelayedStart() {
-        return delayedStart;
-    }
-
-    /**
-     * @see delayedStart
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double}
-     *     
-     */
-    public void setDelayedStart(double value) {
-        this.delayedStart = value;
-    }
-
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -224,8 +197,6 @@ public class AnimatedUpdate
         temp = Double.doubleToLongBits(duration);
         result = ((prime*result)+((int)(temp^(temp >>>(32)))));
         result = ((prime*result)+((update == null)? 0 :update.hashCode()));
-        temp = Double.doubleToLongBits(delayedStart);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
         return result;
     }
 
@@ -253,9 +224,6 @@ public class AnimatedUpdate
                 return false;
             }
         }
-        if (delayedStart!= other.delayedStart) {
-            return false;
-        }
         return true;
     }
 
@@ -268,9 +236,9 @@ public class AnimatedUpdate
      * this.setUpdate(update); </code>
      * 
      * 
-     * @param createOrDeleteOrChange
-     *     required parameter
      * @param targetHref
+     *     required parameter
+     * @param createOrDeleteOrChange
      *     required parameter
      */
     public Update createAndSetUpdate(final String targetHref, final List<Object> createOrDeleteOrChange) {
@@ -300,18 +268,6 @@ public class AnimatedUpdate
      */
     public AnimatedUpdate withUpdate(final Update update) {
         this.setUpdate(update);
-        return this;
-    }
-
-    /**
-     * fluent setter
-     * @see #setDelayedStart(double)
-     * 
-     * @param delayedStart
-     *     required parameter
-     */
-    public AnimatedUpdate withDelayedStart(final double delayedStart) {
-        this.setDelayedStart(delayedStart);
         return this;
     }
 

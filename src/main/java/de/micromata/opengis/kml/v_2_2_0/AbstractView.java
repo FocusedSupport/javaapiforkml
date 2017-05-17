@@ -12,7 +12,6 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
-import de.micromata.opengis.kml.v_2_2_0.gx.ViewerOptions;
 
 
 /**
@@ -24,8 +23,8 @@ import de.micromata.opengis.kml.v_2_2_0.gx.ViewerOptions;
     "abstractViewObjectExtension"
 })
 @XmlSeeAlso({
-    LookAt.class,
-    Camera.class
+    Camera.class,
+    LookAt.class
 })
 public abstract class AbstractView
     extends AbstractObject
@@ -35,7 +34,7 @@ public abstract class AbstractView
     @XmlElement(name = "AbstractViewSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> abstractViewSimpleExtension;
-    @XmlElementRef(name = "AbstractViewObjectExtensionGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
+    @XmlElementRef(name = "AbstractViewObjectExtensionGroup", namespace = "http://www.opengis.net/kml/2.2")
     protected List<AbstractObject> abstractViewObjectExtension;
 
     public AbstractView() {
@@ -148,7 +147,7 @@ public abstract class AbstractView
      * add a value to the abstractViewObjectExtension property collection
      * 
      * @param abstractViewObjectExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link TimeSpan}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link TimeStamp}{@code>}{@link JAXBElement}{@code <}{@link ViewerOptions}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link TimeSpan}{@code>}{@link JAXBElement}{@code <}{@link TimeStamp}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

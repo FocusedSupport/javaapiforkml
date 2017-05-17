@@ -14,8 +14,6 @@ import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import de.micromata.opengis.kml.v_2_2_0.atom.Author;
 import de.micromata.opengis.kml.v_2_2_0.atom.Link;
-import de.micromata.opengis.kml.v_2_2_0.gx.MultiTrack;
-import de.micromata.opengis.kml.v_2_2_0.gx.Track;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 
 
@@ -105,7 +103,7 @@ public class Placemark
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractGeometryGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
+    @XmlElementRef(name = "AbstractGeometryGroup", namespace = "http://www.opengis.net/kml/2.2")
     protected Geometry geometry;
     @XmlElement(name = "PlacemarkSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
@@ -140,15 +138,13 @@ public class Placemark
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Geometry}{@code>}
-     *     {@code <}{@link Point}{@code>}
-     *     {@code <}{@link LinearRing}{@code>}
      *     {@code <}{@link Polygon}{@code>}
-     *     {@code <}{@link Track}{@code>}
-     *     {@code <}{@link MultiTrack}{@code>}
-     *     {@code <}{@link Model}{@code>}
      *     {@code <}{@link LineString}{@code>}
      *     {@code <}{@link MultiGeometry}{@code>}
+     *     {@code <}{@link Point}{@code>}
+     *     {@code <}{@link Geometry}{@code>}
+     *     {@code <}{@link LinearRing}{@code>}
+     *     {@code <}{@link Model}{@code>}
      *     
      */
     public Geometry getGeometry() {
@@ -160,15 +156,13 @@ public class Placemark
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Geometry}{@code>}
-     *     {@code <}{@link Point}{@code>}
-     *     {@code <}{@link LinearRing}{@code>}
      *     {@code <}{@link Polygon}{@code>}
-     *     {@code <}{@link Track}{@code>}
-     *     {@code <}{@link MultiTrack}{@code>}
-     *     {@code <}{@link Model}{@code>}
      *     {@code <}{@link LineString}{@code>}
      *     {@code <}{@link MultiGeometry}{@code>}
+     *     {@code <}{@link Point}{@code>}
+     *     {@code <}{@link Geometry}{@code>}
+     *     {@code <}{@link LinearRing}{@code>}
+     *     {@code <}{@link Model}{@code>}
      *     
      */
     public void setGeometry(Geometry value) {
@@ -253,38 +247,6 @@ public class Placemark
     }
 
     /**
-     * Creates a new instance of {@link MultiTrack} and set it to geometry.
-     * 
-     * This method is a short version for:
-     * <code>
-     * MultiTrack multiTrack = new MultiTrack();
-     * this.setGeometry(multiTrack); </code>
-     * 
-     * 
-     */
-    public MultiTrack createAndSetMultiTrack() {
-        MultiTrack newValue = new MultiTrack();
-        this.setGeometry(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link Track} and set it to geometry.
-     * 
-     * This method is a short version for:
-     * <code>
-     * Track track = new Track();
-     * this.setGeometry(track); </code>
-     * 
-     * 
-     */
-    public Track createAndSetTrack() {
-        Track newValue = new Track();
-        this.setGeometry(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link LinearRing} and set it to geometry.
      * 
      * This method is a short version for:
@@ -301,49 +263,17 @@ public class Placemark
     }
 
     /**
-     * Creates a new instance of {@link Point} and set it to geometry.
+     * Creates a new instance of {@link Polygon} and set it to geometry.
      * 
      * This method is a short version for:
      * <code>
-     * Point point = new Point();
-     * this.setGeometry(point); </code>
+     * Polygon polygon = new Polygon();
+     * this.setGeometry(polygon); </code>
      * 
      * 
      */
-    public Point createAndSetPoint() {
-        Point newValue = new Point();
-        this.setGeometry(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link Model} and set it to geometry.
-     * 
-     * This method is a short version for:
-     * <code>
-     * Model model = new Model();
-     * this.setGeometry(model); </code>
-     * 
-     * 
-     */
-    public Model createAndSetModel() {
-        Model newValue = new Model();
-        this.setGeometry(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link MultiGeometry} and set it to geometry.
-     * 
-     * This method is a short version for:
-     * <code>
-     * MultiGeometry multiGeometry = new MultiGeometry();
-     * this.setGeometry(multiGeometry); </code>
-     * 
-     * 
-     */
-    public MultiGeometry createAndSetMultiGeometry() {
-        MultiGeometry newValue = new MultiGeometry();
+    public Polygon createAndSetPolygon() {
+        Polygon newValue = new Polygon();
         this.setGeometry(newValue);
         return newValue;
     }
@@ -365,17 +295,49 @@ public class Placemark
     }
 
     /**
-     * Creates a new instance of {@link Polygon} and set it to geometry.
+     * Creates a new instance of {@link Model} and set it to geometry.
      * 
      * This method is a short version for:
      * <code>
-     * Polygon polygon = new Polygon();
-     * this.setGeometry(polygon); </code>
+     * Model model = new Model();
+     * this.setGeometry(model); </code>
      * 
      * 
      */
-    public Polygon createAndSetPolygon() {
-        Polygon newValue = new Polygon();
+    public Model createAndSetModel() {
+        Model newValue = new Model();
+        this.setGeometry(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link Point} and set it to geometry.
+     * 
+     * This method is a short version for:
+     * <code>
+     * Point point = new Point();
+     * this.setGeometry(point); </code>
+     * 
+     * 
+     */
+    public Point createAndSetPoint() {
+        Point newValue = new Point();
+        this.setGeometry(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link MultiGeometry} and set it to geometry.
+     * 
+     * This method is a short version for:
+     * <code>
+     * MultiGeometry multiGeometry = new MultiGeometry();
+     * this.setGeometry(multiGeometry); </code>
+     * 
+     * 
+     */
+    public MultiGeometry createAndSetMultiGeometry() {
+        MultiGeometry newValue = new MultiGeometry();
         this.setGeometry(newValue);
         return newValue;
     }

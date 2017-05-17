@@ -78,8 +78,8 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 })
 @XmlSeeAlso({
     ScreenOverlay.class,
-    PhotoOverlay.class,
-    GroundOverlay.class
+    GroundOverlay.class,
+    PhotoOverlay.class
 })
 public abstract class Overlay
     extends Feature

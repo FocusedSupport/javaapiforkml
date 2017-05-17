@@ -150,7 +150,7 @@ public class Kml implements Cloneable
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractFeatureGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
+    @XmlElementRef(name = "AbstractFeatureGroup", namespace = "http://www.opengis.net/kml/2.2")
     protected Feature feature;
     @XmlElement(name = "KmlSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
@@ -215,17 +215,17 @@ public class Kml implements Cloneable
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link Feature}{@code>}
      *     {@code <}{@link NetworkLink}{@code>}
      *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
-     *     {@code <}{@link Document}{@code>}
-     *     {@code <}{@link Tour}{@code>}
-     *     {@code <}{@link ScreenOverlay}{@code>}
-     *     {@code <}{@link Feature}{@code>}
-     *     {@code <}{@link Placemark}{@code>}
+     *     {@code <}{@link Container}{@code>}
      *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link Placemark}{@code>}
+     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link ScreenOverlay}{@code>}
+     *     {@code <}{@link GroundOverlay}{@code>}
      *     
      */
     public Feature getFeature() {
@@ -237,17 +237,17 @@ public class Kml implements Cloneable
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link Feature}{@code>}
      *     {@code <}{@link NetworkLink}{@code>}
      *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
-     *     {@code <}{@link Document}{@code>}
-     *     {@code <}{@link Tour}{@code>}
-     *     {@code <}{@link ScreenOverlay}{@code>}
-     *     {@code <}{@link Feature}{@code>}
-     *     {@code <}{@link Placemark}{@code>}
+     *     {@code <}{@link Container}{@code>}
      *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link Placemark}{@code>}
+     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link ScreenOverlay}{@code>}
+     *     {@code <}{@link GroundOverlay}{@code>}
      *     
      */
     public void setFeature(Feature value) {
@@ -405,49 +405,17 @@ public class Kml implements Cloneable
     }
 
     /**
-     * Creates a new instance of {@link ScreenOverlay} and set it to feature.
+     * Creates a new instance of {@link Placemark} and set it to feature.
      * 
      * This method is a short version for:
      * <code>
-     * ScreenOverlay screenOverlay = new ScreenOverlay();
-     * this.setFeature(screenOverlay); </code>
+     * Placemark placemark = new Placemark();
+     * this.setFeature(placemark); </code>
      * 
      * 
      */
-    public ScreenOverlay createAndSetScreenOverlay() {
-        ScreenOverlay newValue = new ScreenOverlay();
-        this.setFeature(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link PhotoOverlay} and set it to feature.
-     * 
-     * This method is a short version for:
-     * <code>
-     * PhotoOverlay photoOverlay = new PhotoOverlay();
-     * this.setFeature(photoOverlay); </code>
-     * 
-     * 
-     */
-    public PhotoOverlay createAndSetPhotoOverlay() {
-        PhotoOverlay newValue = new PhotoOverlay();
-        this.setFeature(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link GroundOverlay} and set it to feature.
-     * 
-     * This method is a short version for:
-     * <code>
-     * GroundOverlay groundOverlay = new GroundOverlay();
-     * this.setFeature(groundOverlay); </code>
-     * 
-     * 
-     */
-    public GroundOverlay createAndSetGroundOverlay() {
-        GroundOverlay newValue = new GroundOverlay();
+    public Placemark createAndSetPlacemark() {
+        Placemark newValue = new Placemark();
         this.setFeature(newValue);
         return newValue;
     }
@@ -469,22 +437,6 @@ public class Kml implements Cloneable
     }
 
     /**
-     * Creates a new instance of {@link Folder} and set it to feature.
-     * 
-     * This method is a short version for:
-     * <code>
-     * Folder folder = new Folder();
-     * this.setFeature(folder); </code>
-     * 
-     * 
-     */
-    public Folder createAndSetFolder() {
-        Folder newValue = new Folder();
-        this.setFeature(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link Document} and set it to feature.
      * 
      * This method is a short version for:
@@ -501,17 +453,65 @@ public class Kml implements Cloneable
     }
 
     /**
-     * Creates a new instance of {@link Placemark} and set it to feature.
+     * Creates a new instance of {@link Folder} and set it to feature.
      * 
      * This method is a short version for:
      * <code>
-     * Placemark placemark = new Placemark();
-     * this.setFeature(placemark); </code>
+     * Folder folder = new Folder();
+     * this.setFeature(folder); </code>
      * 
      * 
      */
-    public Placemark createAndSetPlacemark() {
-        Placemark newValue = new Placemark();
+    public Folder createAndSetFolder() {
+        Folder newValue = new Folder();
+        this.setFeature(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link ScreenOverlay} and set it to feature.
+     * 
+     * This method is a short version for:
+     * <code>
+     * ScreenOverlay screenOverlay = new ScreenOverlay();
+     * this.setFeature(screenOverlay); </code>
+     * 
+     * 
+     */
+    public ScreenOverlay createAndSetScreenOverlay() {
+        ScreenOverlay newValue = new ScreenOverlay();
+        this.setFeature(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link GroundOverlay} and set it to feature.
+     * 
+     * This method is a short version for:
+     * <code>
+     * GroundOverlay groundOverlay = new GroundOverlay();
+     * this.setFeature(groundOverlay); </code>
+     * 
+     * 
+     */
+    public GroundOverlay createAndSetGroundOverlay() {
+        GroundOverlay newValue = new GroundOverlay();
+        this.setFeature(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link PhotoOverlay} and set it to feature.
+     * 
+     * This method is a short version for:
+     * <code>
+     * PhotoOverlay photoOverlay = new PhotoOverlay();
+     * this.setFeature(photoOverlay); </code>
+     * 
+     * 
+     */
+    public PhotoOverlay createAndSetPhotoOverlay() {
+        PhotoOverlay newValue = new PhotoOverlay();
         this.setFeature(newValue);
         return newValue;
     }

@@ -57,11 +57,11 @@ import de.micromata.opengis.kml.v_2_2_0.AbstractObject;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AbstractTourPrimitiveType")
 @XmlSeeAlso({
-    Wait.class,
+    FlyTo.class,
     AnimatedUpdate.class,
     TourControl.class,
-    FlyTo.class,
-    SoundCue.class
+    SoundCue.class,
+    Wait.class
 })
 public abstract class TourPrimitive
     extends AbstractObject

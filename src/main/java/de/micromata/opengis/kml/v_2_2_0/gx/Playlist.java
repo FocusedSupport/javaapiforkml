@@ -26,7 +26,7 @@ public class Playlist
     implements Cloneable
 {
 
-    @XmlElementRef(name = "AbstractTourPrimitiveGroup", namespace = "http://www.google.com/kml/ext/2.2", required = false)
+    @XmlElementRef(name = "AbstractTourPrimitiveGroup", namespace = "http://www.google.com/kml/ext/2.2")
     protected List<TourPrimitive> tourPrimitive;
 
     public Playlist() {
@@ -79,16 +79,16 @@ public class Playlist
     }
 
     /**
-     * Creates a new instance of {@link Wait} and adds it to tourPrimitive.
+     * Creates a new instance of {@link FlyTo} and adds it to tourPrimitive.
      * This method is a short version for:
      * <code>
-     * Wait wait = new Wait();
-     * this.getTourPrimitive().add(wait); </code>
+     * FlyTo flyTo = new FlyTo();
+     * this.getTourPrimitive().add(flyTo); </code>
      * 
      * 
      */
-    public Wait createAndAddWait() {
-        Wait newValue = new Wait();
+    public FlyTo createAndAddFlyTo() {
+        FlyTo newValue = new FlyTo();
         this.getTourPrimitive().add(newValue);
         return newValue;
     }
@@ -124,21 +124,6 @@ public class Playlist
     }
 
     /**
-     * Creates a new instance of {@link FlyTo} and adds it to tourPrimitive.
-     * This method is a short version for:
-     * <code>
-     * FlyTo flyTo = new FlyTo();
-     * this.getTourPrimitive().add(flyTo); </code>
-     * 
-     * 
-     */
-    public FlyTo createAndAddFlyTo() {
-        FlyTo newValue = new FlyTo();
-        this.getTourPrimitive().add(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link SoundCue} and adds it to tourPrimitive.
      * This method is a short version for:
      * <code>
@@ -149,6 +134,21 @@ public class Playlist
      */
     public SoundCue createAndAddSoundCue() {
         SoundCue newValue = new SoundCue();
+        this.getTourPrimitive().add(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link Wait} and adds it to tourPrimitive.
+     * This method is a short version for:
+     * <code>
+     * Wait wait = new Wait();
+     * this.getTourPrimitive().add(wait); </code>
+     * 
+     * 
+     */
+    public Wait createAndAddWait() {
+        Wait newValue = new Wait();
         this.getTourPrimitive().add(newValue);
         return newValue;
     }
@@ -169,7 +169,7 @@ public class Playlist
      * add a value to the tourPrimitive property collection
      * 
      * @param tourPrimitive
-     *     Objects of the following type are allowed in the list: {@code <}{@link AnimatedUpdate}{@code>}{@link JAXBElement}{@code <}{@link Wait}{@code>}{@link JAXBElement}{@code <}{@link SoundCue}{@code>}{@link JAXBElement}{@code <}{@link TourPrimitive}{@code>}{@link JAXBElement}{@code <}{@link FlyTo}{@code>}{@link JAXBElement}{@code <}{@link TourControl}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link TourPrimitive}{@code>}{@link JAXBElement}{@code <}{@link Wait}{@code>}{@link JAXBElement}{@code <}{@link AnimatedUpdate}{@code>}{@link JAXBElement}{@code <}{@link SoundCue}{@code>}{@link JAXBElement}{@code <}{@link TourControl}{@code>}{@link JAXBElement}{@code <}{@link FlyTo}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

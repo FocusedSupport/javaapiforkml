@@ -52,9 +52,9 @@ public class PostalRoute implements Cloneable
     /**
      * Value constructor with only mandatory fields
      * 
-     * @param postalRouteName
-     *     required parameter
      * @param postalRouteNumber
+     *     required parameter
+     * @param postalRouteName
      *     required parameter
      */
     public PostalRoute(final List<PostalRoute.PostalRouteName> postalRouteName, final PostalRoute.PostalRouteNumber postalRouteNumber) {

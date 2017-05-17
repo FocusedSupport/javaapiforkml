@@ -101,7 +101,7 @@ public class Pair
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractStyleSelectorGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
+    @XmlElementRef(name = "AbstractStyleSelectorGroup", namespace = "http://www.opengis.net/kml/2.2")
     protected StyleSelector styleSelector;
     @XmlElement(name = "PairSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
@@ -185,8 +185,8 @@ public class Pair
      * @return
      *     possible object is
      *     {@code <}{@link Style}{@code>}
-     *     {@code <}{@link StyleSelector}{@code>}
      *     {@code <}{@link StyleMap}{@code>}
+     *     {@code <}{@link StyleSelector}{@code>}
      *     
      */
     public StyleSelector getStyleSelector() {
@@ -199,8 +199,8 @@ public class Pair
      * @param value
      *     allowed object is
      *     {@code <}{@link Style}{@code>}
-     *     {@code <}{@link StyleSelector}{@code>}
      *     {@code <}{@link StyleMap}{@code>}
+     *     {@code <}{@link StyleSelector}{@code>}
      *     
      */
     public void setStyleSelector(StyleSelector value) {
@@ -305,22 +305,6 @@ public class Pair
     }
 
     /**
-     * Creates a new instance of {@link Style} and set it to styleSelector.
-     * 
-     * This method is a short version for:
-     * <code>
-     * Style style = new Style();
-     * this.setStyleSelector(style); </code>
-     * 
-     * 
-     */
-    public Style createAndSetStyle() {
-        Style newValue = new Style();
-        this.setStyleSelector(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link StyleMap} and set it to styleSelector.
      * 
      * This method is a short version for:
@@ -332,6 +316,22 @@ public class Pair
      */
     public StyleMap createAndSetStyleMap() {
         StyleMap newValue = new StyleMap();
+        this.setStyleSelector(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link Style} and set it to styleSelector.
+     * 
+     * This method is a short version for:
+     * <code>
+     * Style style = new Style();
+     * this.setStyleSelector(style); </code>
+     * 
+     * 
+     */
+    public Style createAndSetStyle() {
+        Style newValue = new Style();
         this.setStyleSelector(newValue);
         return newValue;
     }

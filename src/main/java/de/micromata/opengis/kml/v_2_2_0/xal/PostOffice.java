@@ -402,9 +402,9 @@ public class PostOffice implements Cloneable
      * this.setPostalRoute(postalRoute); </code>
      * 
      * 
-     * @param postalRouteName
-     *     required parameter
      * @param postalRouteNumber
+     *     required parameter
+     * @param postalRouteName
      *     required parameter
      */
     public PostalRoute createAndSetPostalRoute(final List<PostalRoute.PostalRouteName> postalRouteName, final PostalRoute.PostalRouteNumber postalRouteNumber) {

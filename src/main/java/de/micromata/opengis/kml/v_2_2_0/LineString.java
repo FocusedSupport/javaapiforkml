@@ -241,9 +241,9 @@ public class LineString
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -255,9 +255,9 @@ public class LineString
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -394,9 +394,9 @@ public class LineString
     /**
      * add a value to the coordinates property collection
      * 
-     * @param longitude
-     *     required parameter
      * @param latitude
+     *     required parameter
+     * @param longitude
      *     required parameter
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
@@ -409,11 +409,11 @@ public class LineString
     /**
      * add a value to the coordinates property collection
      * 
-     * @param longitude
+     * @param altitude
      *     required parameter
      * @param latitude
      *     required parameter
-     * @param altitude
+     * @param longitude
      *     required parameter
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 

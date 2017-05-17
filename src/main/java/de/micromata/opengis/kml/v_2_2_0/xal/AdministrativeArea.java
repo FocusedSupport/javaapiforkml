@@ -463,13 +463,13 @@ public class AdministrativeArea implements Cloneable
      * this.setLocality(locality); </code>
      * 
      * 
-     * @param postBox
-     *     required parameter
-     * @param postOffice
-     *     required parameter
      * @param postalRoute
      *     required parameter
+     * @param postBox
+     *     required parameter
      * @param largeMailUser
+     *     required parameter
+     * @param postOffice
      *     required parameter
      */
     public Locality createAndSetLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -1288,13 +1288,13 @@ public class AdministrativeArea implements Cloneable
          * this.setLocality(locality); </code>
          * 
          * 
-         * @param postBox
-         *     required parameter
-         * @param postOffice
-         *     required parameter
          * @param postalRoute
          *     required parameter
+         * @param postBox
+         *     required parameter
          * @param largeMailUser
+         *     required parameter
+         * @param postOffice
          *     required parameter
          */
         public Locality createAndSetLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {

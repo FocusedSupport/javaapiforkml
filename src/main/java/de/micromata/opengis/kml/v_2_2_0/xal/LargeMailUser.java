@@ -471,11 +471,11 @@ public class LargeMailUser implements Cloneable
      * this.setThoroughfare(thoroughfare); </code>
      * 
      * 
-     * @param postalCode
+     * @param firm
      *     required parameter
      * @param premise
      *     required parameter
-     * @param firm
+     * @param postalCode
      *     required parameter
      * @param dependentLocality
      *     required parameter

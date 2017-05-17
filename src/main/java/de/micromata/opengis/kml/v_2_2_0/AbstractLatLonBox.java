@@ -43,8 +43,8 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     "abstractLatLonBoxObjectExtension"
 })
 @XmlSeeAlso({
-    LatLonAltBox.class,
-    LatLonBox.class
+    LatLonBox.class,
+    LatLonAltBox.class
 })
 public abstract class AbstractLatLonBox
     extends AbstractObject

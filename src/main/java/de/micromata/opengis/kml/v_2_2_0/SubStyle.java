@@ -21,9 +21,9 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     "subStyleObjectExtension"
 })
 @XmlSeeAlso({
-    BalloonStyle.class,
     ListStyle.class,
-    ColorStyle.class
+    ColorStyle.class,
+    BalloonStyle.class
 })
 public abstract class SubStyle
     extends AbstractObject

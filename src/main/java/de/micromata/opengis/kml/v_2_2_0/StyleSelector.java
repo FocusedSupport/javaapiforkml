@@ -48,8 +48,8 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     "styleSelectorObjectExtension"
 })
 @XmlSeeAlso({
-    Style.class,
-    StyleMap.class
+    StyleMap.class,
+    Style.class
 })
 public abstract class StyleSelector
     extends AbstractObject

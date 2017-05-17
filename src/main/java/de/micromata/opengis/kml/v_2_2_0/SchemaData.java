@@ -3,17 +3,14 @@ package de.micromata.opengis.kml.v_2_2_0;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
-import de.micromata.opengis.kml.v_2_2_0.gx.SimpleArrayData;
 
 
 /**
@@ -76,24 +73,6 @@ public class SchemaData
      */
     @XmlElement(name = "SimpleData")
     protected List<SimpleData> simpleData;
-    /**
-     * <Object>
-     * <p>
-     * This is an abstract base class and cannot be used directly in a KML file. It provides 
-     * the id attribute, which allows unique identification of a KML element, and the targetId 
-     * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
-     * be used. 
-     * </p>
-     * 
-     * Syntax: 
-     * <pre>&lt;!-- abstract element; do not create --&gt;<strong>
-     * &lt;!-- <em>Object</em> id="ID" targetId="NCName" --&gt;
-     * &lt;!-- /<em>Object</em>&gt; --&gt;</strong></pre>
-     * 
-     * 
-     * 
-     */
     @XmlElement(name = "SchemaDataExtension")
     protected List<Object> schemaDataExtension;
     @XmlAttribute(name = "schemaUrl")
@@ -257,7 +236,7 @@ public class SchemaData
      * add a value to the schemaDataExtension property collection
      * 
      * @param schemaDataExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link SimpleArrayData}{@code>}{@link JAXBElement}{@code <}{@link Object}{@code>}
+     *     Objects of the following type are allowed in the list: {@link Object}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

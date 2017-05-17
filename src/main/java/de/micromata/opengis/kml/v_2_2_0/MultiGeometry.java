@@ -12,8 +12,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
-import de.micromata.opengis.kml.v_2_2_0.gx.MultiTrack;
-import de.micromata.opengis.kml.v_2_2_0.gx.Track;
 
 
 /**
@@ -80,7 +78,7 @@ public class MultiGeometry
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractGeometryGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
+    @XmlElementRef(name = "AbstractGeometryGroup", namespace = "http://www.opengis.net/kml/2.2")
     protected List<Geometry> geometry;
     @XmlElement(name = "MultiGeometrySimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
@@ -199,36 +197,6 @@ public class MultiGeometry
     }
 
     /**
-     * Creates a new instance of {@link MultiTrack} and adds it to geometry.
-     * This method is a short version for:
-     * <code>
-     * MultiTrack multiTrack = new MultiTrack();
-     * this.getGeometry().add(multiTrack); </code>
-     * 
-     * 
-     */
-    public MultiTrack createAndAddMultiTrack() {
-        MultiTrack newValue = new MultiTrack();
-        this.getGeometry().add(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link Track} and adds it to geometry.
-     * This method is a short version for:
-     * <code>
-     * Track track = new Track();
-     * this.getGeometry().add(track); </code>
-     * 
-     * 
-     */
-    public Track createAndAddTrack() {
-        Track newValue = new Track();
-        this.getGeometry().add(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link LinearRing} and adds it to geometry.
      * This method is a short version for:
      * <code>
@@ -239,66 +207,6 @@ public class MultiGeometry
      */
     public LinearRing createAndAddLinearRing() {
         LinearRing newValue = new LinearRing();
-        this.getGeometry().add(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link Point} and adds it to geometry.
-     * This method is a short version for:
-     * <code>
-     * Point point = new Point();
-     * this.getGeometry().add(point); </code>
-     * 
-     * 
-     */
-    public Point createAndAddPoint() {
-        Point newValue = new Point();
-        this.getGeometry().add(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link Model} and adds it to geometry.
-     * This method is a short version for:
-     * <code>
-     * Model model = new Model();
-     * this.getGeometry().add(model); </code>
-     * 
-     * 
-     */
-    public Model createAndAddModel() {
-        Model newValue = new Model();
-        this.getGeometry().add(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link MultiGeometry} and adds it to geometry.
-     * This method is a short version for:
-     * <code>
-     * MultiGeometry multiGeometry = new MultiGeometry();
-     * this.getGeometry().add(multiGeometry); </code>
-     * 
-     * 
-     */
-    public MultiGeometry createAndAddMultiGeometry() {
-        MultiGeometry newValue = new MultiGeometry();
-        this.getGeometry().add(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link LineString} and adds it to geometry.
-     * This method is a short version for:
-     * <code>
-     * LineString lineString = new LineString();
-     * this.getGeometry().add(lineString); </code>
-     * 
-     * 
-     */
-    public LineString createAndAddLineString() {
-        LineString newValue = new LineString();
         this.getGeometry().add(newValue);
         return newValue;
     }
@@ -319,6 +227,66 @@ public class MultiGeometry
     }
 
     /**
+     * Creates a new instance of {@link LineString} and adds it to geometry.
+     * This method is a short version for:
+     * <code>
+     * LineString lineString = new LineString();
+     * this.getGeometry().add(lineString); </code>
+     * 
+     * 
+     */
+    public LineString createAndAddLineString() {
+        LineString newValue = new LineString();
+        this.getGeometry().add(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link Model} and adds it to geometry.
+     * This method is a short version for:
+     * <code>
+     * Model model = new Model();
+     * this.getGeometry().add(model); </code>
+     * 
+     * 
+     */
+    public Model createAndAddModel() {
+        Model newValue = new Model();
+        this.getGeometry().add(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link Point} and adds it to geometry.
+     * This method is a short version for:
+     * <code>
+     * Point point = new Point();
+     * this.getGeometry().add(point); </code>
+     * 
+     * 
+     */
+    public Point createAndAddPoint() {
+        Point newValue = new Point();
+        this.getGeometry().add(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link MultiGeometry} and adds it to geometry.
+     * This method is a short version for:
+     * <code>
+     * MultiGeometry multiGeometry = new MultiGeometry();
+     * this.getGeometry().add(multiGeometry); </code>
+     * 
+     * 
+     */
+    public MultiGeometry createAndAddMultiGeometry() {
+        MultiGeometry newValue = new MultiGeometry();
+        this.getGeometry().add(newValue);
+        return newValue;
+    }
+
+    /**
      * @see geometry
      * 
      * @param geometry
@@ -331,7 +299,7 @@ public class MultiGeometry
      * add a value to the geometry property collection
      * 
      * @param geometry
-     *     Objects of the following type are allowed in the list: {@code <}{@link Geometry}{@code>}{@link JAXBElement}{@code <}{@link Point}{@code>}{@link JAXBElement}{@code <}{@link LinearRing}{@code>}{@link JAXBElement}{@code <}{@link Polygon}{@code>}{@link JAXBElement}{@code <}{@link Track}{@code>}{@link JAXBElement}{@code <}{@link MultiTrack}{@code>}{@link JAXBElement}{@code <}{@link Model}{@code>}{@link JAXBElement}{@code <}{@link LineString}{@code>}{@link JAXBElement}{@code <}{@link MultiGeometry}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Polygon}{@code>}{@link JAXBElement}{@code <}{@link LineString}{@code>}{@link JAXBElement}{@code <}{@link MultiGeometry}{@code>}{@link JAXBElement}{@code <}{@link Point}{@code>}{@link JAXBElement}{@code <}{@link Geometry}{@code>}{@link JAXBElement}{@code <}{@link LinearRing}{@code>}{@link JAXBElement}{@code <}{@link Model}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

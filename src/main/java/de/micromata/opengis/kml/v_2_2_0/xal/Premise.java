@@ -92,9 +92,9 @@ public class Premise implements Cloneable
      * 
      * @param premiseNumber
      *     required parameter
-     * @param premiseNumberRange
-     *     required parameter
      * @param premiseLocation
+     *     required parameter
+     * @param premiseNumberRange
      *     required parameter
      */
     public Premise(final Premise.PremiseLocation premiseLocation, final List<PremiseNumber> premiseNumber, final Premise.PremiseNumberRange premiseNumberRange) {
@@ -694,9 +694,9 @@ public class Premise implements Cloneable
      * this.setPremiseNumberRange(premiseNumberRange); </code>
      * 
      * 
-     * @param premiseNumberRangeTo
-     *     required parameter
      * @param premiseNumberRangeFrom
+     *     required parameter
+     * @param premiseNumberRangeTo
      *     required parameter
      */
     public Premise.PremiseNumberRange createAndSetPremiseNumberRange(final Premise.PremiseNumberRange.PremiseNumberRangeFrom premiseNumberRangeFrom, final Premise.PremiseNumberRange.PremiseNumberRangeTo premiseNumberRangeTo) {
@@ -826,9 +826,9 @@ public class Premise implements Cloneable
      * 
      * @param premiseNumber
      *     required parameter
-     * @param premiseNumberRange
-     *     required parameter
      * @param premiseLocation
+     *     required parameter
+     * @param premiseNumberRange
      *     required parameter
      */
     public Premise createAndSetPremise(final Premise.PremiseLocation premiseLocation, final List<PremiseNumber> premiseNumber, final Premise.PremiseNumberRange premiseNumberRange) {
@@ -1711,9 +1711,9 @@ public class Premise implements Cloneable
         /**
          * Value constructor with only mandatory fields
          * 
-         * @param premiseNumberRangeTo
-         *     required parameter
          * @param premiseNumberRangeFrom
+         *     required parameter
+         * @param premiseNumberRangeTo
          *     required parameter
          */
         public PremiseNumberRange(final Premise.PremiseNumberRange.PremiseNumberRangeFrom premiseNumberRangeFrom, final Premise.PremiseNumberRange.PremiseNumberRangeTo premiseNumberRangeTo) {

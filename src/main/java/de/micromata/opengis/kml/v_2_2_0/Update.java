@@ -75,9 +75,9 @@ public class Update implements Cloneable
     @XmlSchemaType(name = "anyURI")
     protected String targetHref;
     @XmlElements({
-        @XmlElement(name = "UpdateOpExtensionGroup"),
         @XmlElement(name = "Change", type = Change.class),
         @XmlElement(name = "Delete", type = Delete.class),
+        @XmlElement(name = "UpdateOpExtensionGroup"),
         @XmlElement(name = "Create", type = Create.class)
     })
     protected List<Object> createOrDeleteOrChange;
@@ -87,9 +87,9 @@ public class Update implements Cloneable
     /**
      * Value constructor with only mandatory fields
      * 
-     * @param createOrDeleteOrChange
-     *     required parameter
      * @param targetHref
+     *     required parameter
+     * @param createOrDeleteOrChange
      *     required parameter
      */
     public Update(final String targetHref, final List<Object> createOrDeleteOrChange) {
@@ -218,7 +218,7 @@ public class Update implements Cloneable
      * add a value to the createOrDeleteOrChange property collection
      * 
      * @param createOrDeleteOrChange
-     *     Objects of the following type are allowed in the list: {@link Object}{@link Change}{@link Delete}{@link Create}
+     *     Objects of the following type are allowed in the list: {@link Change}{@link Delete}{@link Object}{@link Create}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

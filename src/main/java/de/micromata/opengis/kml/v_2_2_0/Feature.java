@@ -89,10 +89,10 @@ import de.micromata.opengis.kml.v_2_2_0.xal.Thoroughfare;
 })
 @XmlSeeAlso({
     Tour.class,
-    Overlay.class,
+    Placemark.class,
     NetworkLink.class,
     Container.class,
-    Placemark.class
+    Overlay.class
 })
 public abstract class Feature
     extends AbstractObject
@@ -372,7 +372,7 @@ public abstract class Feature
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractViewGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
+    @XmlElementRef(name = "AbstractViewGroup", namespace = "http://www.opengis.net/kml/2.2")
     protected AbstractView abstractView;
     /**
      * <TimePrimitive>
@@ -400,7 +400,7 @@ public abstract class Feature
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractTimePrimitiveGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
+    @XmlElementRef(name = "AbstractTimePrimitiveGroup", namespace = "http://www.opengis.net/kml/2.2")
     protected TimePrimitive timePrimitive;
     /**
      * <styleurl>
@@ -446,7 +446,7 @@ public abstract class Feature
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractStyleSelectorGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
+    @XmlElementRef(name = "AbstractStyleSelectorGroup", namespace = "http://www.opengis.net/kml/2.2")
     protected List<StyleSelector> styleSelector;
     /**
      * <Region>
@@ -861,9 +861,9 @@ public abstract class Feature
      * 
      * @return
      *     possible object is
+     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link AbstractView}{@code>}
      *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -875,9 +875,9 @@ public abstract class Feature
      * 
      * @param value
      *     allowed object is
+     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link AbstractView}{@code>}
      *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -889,8 +889,8 @@ public abstract class Feature
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link TimeSpan}{@code>}
      *     {@code <}{@link TimeStamp}{@code>}
+     *     {@code <}{@link TimeSpan}{@code>}
      *     {@code <}{@link TimePrimitive}{@code>}
      *     
      */
@@ -903,8 +903,8 @@ public abstract class Feature
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link TimeSpan}{@code>}
      *     {@code <}{@link TimeStamp}{@code>}
+     *     {@code <}{@link TimeSpan}{@code>}
      *     {@code <}{@link TimePrimitive}{@code>}
      *     
      */
@@ -1309,13 +1309,13 @@ public abstract class Feature
      * this.setXalAddressDetails(addressDetails); </code>
      * 
      * 
-     * @param xalAddress
-     *     required parameter
-     * @param addressLines
-     *     required parameter
      * @param country
      *     required parameter
      * @param locality
+     *     required parameter
+     * @param xalAddress
+     *     required parameter
+     * @param addressLines
      *     required parameter
      * @param administrativeArea
      *     required parameter
@@ -1345,22 +1345,6 @@ public abstract class Feature
     }
 
     /**
-     * Creates a new instance of {@link LookAt} and set it to abstractView.
-     * 
-     * This method is a short version for:
-     * <code>
-     * LookAt lookAt = new LookAt();
-     * this.setAbstractView(lookAt); </code>
-     * 
-     * 
-     */
-    public LookAt createAndSetLookAt() {
-        LookAt newValue = new LookAt();
-        this.setAbstractView(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link Camera} and set it to abstractView.
      * 
      * This method is a short version for:
@@ -1377,18 +1361,18 @@ public abstract class Feature
     }
 
     /**
-     * Creates a new instance of {@link TimeSpan} and set it to timePrimitive.
+     * Creates a new instance of {@link LookAt} and set it to abstractView.
      * 
      * This method is a short version for:
      * <code>
-     * TimeSpan timeSpan = new TimeSpan();
-     * this.setTimePrimitive(timeSpan); </code>
+     * LookAt lookAt = new LookAt();
+     * this.setAbstractView(lookAt); </code>
      * 
      * 
      */
-    public TimeSpan createAndSetTimeSpan() {
-        TimeSpan newValue = new TimeSpan();
-        this.setTimePrimitive(newValue);
+    public LookAt createAndSetLookAt() {
+        LookAt newValue = new LookAt();
+        this.setAbstractView(newValue);
         return newValue;
     }
 
@@ -1409,17 +1393,18 @@ public abstract class Feature
     }
 
     /**
-     * Creates a new instance of {@link Style} and adds it to styleSelector.
+     * Creates a new instance of {@link TimeSpan} and set it to timePrimitive.
+     * 
      * This method is a short version for:
      * <code>
-     * Style style = new Style();
-     * this.getStyleSelector().add(style); </code>
+     * TimeSpan timeSpan = new TimeSpan();
+     * this.setTimePrimitive(timeSpan); </code>
      * 
      * 
      */
-    public Style createAndAddStyle() {
-        Style newValue = new Style();
-        this.getStyleSelector().add(newValue);
+    public TimeSpan createAndSetTimeSpan() {
+        TimeSpan newValue = new TimeSpan();
+        this.setTimePrimitive(newValue);
         return newValue;
     }
 
@@ -1434,6 +1419,21 @@ public abstract class Feature
      */
     public StyleMap createAndAddStyleMap() {
         StyleMap newValue = new StyleMap();
+        this.getStyleSelector().add(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link Style} and adds it to styleSelector.
+     * This method is a short version for:
+     * <code>
+     * Style style = new Style();
+     * this.getStyleSelector().add(style); </code>
+     * 
+     * 
+     */
+    public Style createAndAddStyle() {
+        Style newValue = new Style();
         this.getStyleSelector().add(newValue);
         return newValue;
     }
@@ -1499,7 +1499,7 @@ public abstract class Feature
      * add a value to the styleSelector property collection
      * 
      * @param styleSelector
-     *     Objects of the following type are allowed in the list: {@code <}{@link Style}{@code>}{@link JAXBElement}{@code <}{@link StyleSelector}{@code>}{@link JAXBElement}{@code <}{@link StyleMap}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Style}{@code>}{@link JAXBElement}{@code <}{@link StyleMap}{@code>}{@link JAXBElement}{@code <}{@link StyleSelector}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -1521,7 +1521,7 @@ public abstract class Feature
      * add a value to the featureSimpleExtension property collection
      * 
      * @param featureSimpleExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link Double}{@code>}{@link JAXBElement}{@code <}{@link Object}{@code>}{@link JAXBElement}{@code <}{@link Boolean}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Object}{@code>}{@link JAXBElement}{@code <}{@link Boolean}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

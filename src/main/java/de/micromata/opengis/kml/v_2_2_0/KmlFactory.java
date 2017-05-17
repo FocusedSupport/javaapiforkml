@@ -6,16 +6,10 @@ import de.micromata.opengis.kml.v_2_2_0.atom.Author;
 import de.micromata.opengis.kml.v_2_2_0.gx.AnimatedUpdate;
 import de.micromata.opengis.kml.v_2_2_0.gx.FlyTo;
 import de.micromata.opengis.kml.v_2_2_0.gx.LatLonQuad;
-import de.micromata.opengis.kml.v_2_2_0.gx.MultiTrack;
-import de.micromata.opengis.kml.v_2_2_0.gx.Option;
 import de.micromata.opengis.kml.v_2_2_0.gx.Playlist;
-import de.micromata.opengis.kml.v_2_2_0.gx.SimpleArrayData;
-import de.micromata.opengis.kml.v_2_2_0.gx.SimpleArrayField;
 import de.micromata.opengis.kml.v_2_2_0.gx.SoundCue;
 import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
 import de.micromata.opengis.kml.v_2_2_0.gx.TourControl;
-import de.micromata.opengis.kml.v_2_2_0.gx.Track;
-import de.micromata.opengis.kml.v_2_2_0.gx.ViewerOptions;
 import de.micromata.opengis.kml.v_2_2_0.gx.Wait;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressLine;
@@ -108,9 +102,9 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link Coordinate}
      * 
-     * @param longitude
-     *     required parameter
      * @param latitude
+     *     required parameter
+     * @param longitude
      *     required parameter
      */
     public static Coordinate createCoordinate(final double longitude, final double latitude) {
@@ -120,11 +114,11 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link Coordinate}
      * 
-     * @param longitude
+     * @param altitude
      *     required parameter
      * @param latitude
      *     required parameter
-     * @param altitude
+     * @param longitude
      *     required parameter
      */
     public static Coordinate createCoordinate(final double longitude, final double latitude, final double altitude) {
@@ -532,9 +526,9 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link Update}
      * 
-     * @param createOrDeleteOrChange
-     *     required parameter
      * @param targetHref
+     *     required parameter
+     * @param createOrDeleteOrChange
      *     required parameter
      */
     public static Update createUpdate(final String targetHref, final List<Object> createOrDeleteOrChange) {
@@ -600,43 +594,11 @@ public final class KmlFactory {
     }
 
     /**
-     * Create an instance of {@link MultiTrack}
-     * 
-     */
-    public static MultiTrack createGxMultiTrack() {
-        return new MultiTrack();
-    }
-
-    /**
-     * Create an instance of {@link Option}
-     * 
-     */
-    public static Option createGxOption() {
-        return new Option();
-    }
-
-    /**
      * Create an instance of {@link Playlist}
      * 
      */
     public static Playlist createGxPlaylist() {
         return new Playlist();
-    }
-
-    /**
-     * Create an instance of {@link SimpleArrayData}
-     * 
-     */
-    public static SimpleArrayData createGxSimpleArrayData() {
-        return new SimpleArrayData();
-    }
-
-    /**
-     * Create an instance of {@link SimpleArrayField}
-     * 
-     */
-    public static SimpleArrayField createGxSimpleArrayField() {
-        return new SimpleArrayField();
     }
 
     /**
@@ -664,24 +626,6 @@ public final class KmlFactory {
     }
 
     /**
-     * Create an instance of {@link Track}
-     * 
-     */
-    public static Track createGxTrack() {
-        return new Track();
-    }
-
-    /**
-     * Create an instance of {@link ViewerOptions}
-     * 
-     * @param option
-     *     required parameter
-     */
-    public static ViewerOptions createGxViewerOptions(final List<Option> option) {
-        return new ViewerOptions(option);
-    }
-
-    /**
      * Create an instance of {@link Wait}
      * 
      */
@@ -692,13 +636,13 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link AddressDetails}
      * 
-     * @param xalAddress
-     *     required parameter
-     * @param addressLines
-     *     required parameter
      * @param country
      *     required parameter
      * @param locality
+     *     required parameter
+     * @param xalAddress
+     *     required parameter
+     * @param addressLines
      *     required parameter
      * @param administrativeArea
      *     required parameter
@@ -768,13 +712,13 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link DependentLocality}
      * 
-     * @param postBox
-     *     required parameter
-     * @param postOffice
-     *     required parameter
      * @param postalRoute
      *     required parameter
+     * @param postBox
+     *     required parameter
      * @param largeMailUser
+     *     required parameter
+     * @param postOffice
      *     required parameter
      */
     public static DependentLocality createXalDependentLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -800,13 +744,13 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link Locality}
      * 
-     * @param postBox
-     *     required parameter
-     * @param postOffice
-     *     required parameter
      * @param postalRoute
      *     required parameter
+     * @param postBox
+     *     required parameter
      * @param largeMailUser
+     *     required parameter
+     * @param postOffice
      *     required parameter
      */
     public static Locality createXalLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -850,9 +794,9 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link PostalRoute}
      * 
-     * @param postalRouteName
-     *     required parameter
      * @param postalRouteNumber
+     *     required parameter
+     * @param postalRouteName
      *     required parameter
      */
     public static PostalRoute createXalPostalRoute(final List<PostalRoute.PostalRouteName> postalRouteName, final PostalRoute.PostalRouteNumber postalRouteNumber) {
@@ -864,9 +808,9 @@ public final class KmlFactory {
      * 
      * @param premiseNumber
      *     required parameter
-     * @param premiseNumberRange
-     *     required parameter
      * @param premiseLocation
+     *     required parameter
+     * @param premiseNumberRange
      *     required parameter
      */
     public static Premise createXalPremise(final Premise.PremiseLocation premiseLocation, final List<PremiseNumber> premiseNumber, final Premise.PremiseNumberRange premiseNumberRange) {
@@ -910,11 +854,11 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link Thoroughfare}
      * 
-     * @param postalCode
+     * @param firm
      *     required parameter
      * @param premise
      *     required parameter
-     * @param firm
+     * @param postalCode
      *     required parameter
      * @param dependentLocality
      *     required parameter

@@ -15,9 +15,7 @@ import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import de.micromata.opengis.kml.v_2_2_0.gx.LatLonQuad;
 import de.micromata.opengis.kml.v_2_2_0.gx.Playlist;
-import de.micromata.opengis.kml.v_2_2_0.gx.SimpleArrayData;
 import de.micromata.opengis.kml.v_2_2_0.gx.TourPrimitive;
-import de.micromata.opengis.kml.v_2_2_0.gx.ViewerOptions;
 
 
 /**
@@ -43,32 +41,30 @@ import de.micromata.opengis.kml.v_2_2_0.gx.ViewerOptions;
     "objectSimpleExtension"
 })
 @XmlSeeAlso({
-    Playlist.class,
-    SimpleArrayData.class,
-    ViewerOptions.class,
-    TourPrimitive.class,
     LatLonQuad.class,
-    Region.class,
+    Playlist.class,
+    TourPrimitive.class,
+    Orientation.class,
     TimePrimitive.class,
     ItemIcon.class,
-    Scale.class,
-    Pair.class,
-    ViewVolume.class,
-    Alias.class,
-    Location.class,
-    Lod.class,
-    ResourceMap.class,
     ImagePyramid.class,
+    ViewVolume.class,
+    ResourceMap.class,
+    Region.class,
+    Pair.class,
+    Location.class,
     SchemaData.class,
-    Orientation.class,
-    Feature.class,
-    StyleSelector.class,
+    Lod.class,
     AbstractView.class,
+    StyleSelector.class,
     SubStyle.class,
+    Feature.class,
     Data.class,
+    Scale.class,
+    Alias.class,
     Geometry.class,
-    AbstractLatLonBox.class,
-    BasicLink.class
+    BasicLink.class,
+    AbstractLatLonBox.class
 })
 public abstract class AbstractObject implements Cloneable
 {

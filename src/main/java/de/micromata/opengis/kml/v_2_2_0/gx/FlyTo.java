@@ -125,7 +125,7 @@ public class FlyTo
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractViewGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
+    @XmlElementRef(name = "AbstractViewGroup", namespace = "http://www.opengis.net/kml/2.2")
     protected AbstractView abstractView;
 
     public FlyTo() {
@@ -185,9 +185,9 @@ public class FlyTo
      * 
      * @return
      *     possible object is
+     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link AbstractView}{@code>}
      *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -199,9 +199,9 @@ public class FlyTo
      * 
      * @param value
      *     allowed object is
+     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link AbstractView}{@code>}
      *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -257,22 +257,6 @@ public class FlyTo
     }
 
     /**
-     * Creates a new instance of {@link LookAt} and set it to abstractView.
-     * 
-     * This method is a short version for:
-     * <code>
-     * LookAt lookAt = new LookAt();
-     * this.setAbstractView(lookAt); </code>
-     * 
-     * 
-     */
-    public LookAt createAndSetLookAt() {
-        LookAt newValue = new LookAt();
-        this.setAbstractView(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link Camera} and set it to abstractView.
      * 
      * This method is a short version for:
@@ -284,6 +268,22 @@ public class FlyTo
      */
     public Camera createAndSetCamera() {
         Camera newValue = new Camera();
+        this.setAbstractView(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link LookAt} and set it to abstractView.
+     * 
+     * This method is a short version for:
+     * <code>
+     * LookAt lookAt = new LookAt();
+     * this.setAbstractView(lookAt); </code>
+     * 
+     * 
+     */
+    public LookAt createAndSetLookAt() {
+        LookAt newValue = new LookAt();
         this.setAbstractView(newValue);
         return newValue;
     }

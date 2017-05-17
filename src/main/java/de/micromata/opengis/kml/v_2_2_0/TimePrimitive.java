@@ -44,8 +44,8 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     "timePrimitiveObjectExtension"
 })
 @XmlSeeAlso({
-    TimeSpan.class,
-    TimeStamp.class
+    TimeStamp.class,
+    TimeSpan.class
 })
 public abstract class TimePrimitive
     extends AbstractObject

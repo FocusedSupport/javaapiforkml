@@ -15,8 +15,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SoundCueType", propOrder = {
-    "href",
-    "delayedStart"
+    "href"
 })
 @XmlRootElement(name = "SoundCue", namespace = "http://www.google.com/kml/ext/2.2")
 public class SoundCue
@@ -26,8 +25,6 @@ public class SoundCue
 
     @XmlElement(namespace = "http://www.opengis.net/kml/2.2")
     protected String href;
-    @XmlElement(defaultValue = "0.0")
-    protected double delayedStart;
 
     public SoundCue() {
         super();
@@ -55,36 +52,11 @@ public class SoundCue
         this.href = value;
     }
 
-    /**
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double}
-     *     
-     */
-    public double getDelayedStart() {
-        return delayedStart;
-    }
-
-    /**
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double}
-     *     
-     */
-    public void setDelayedStart(double value) {
-        this.delayedStart = value;
-    }
-
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        long temp;
         result = ((prime*result)+((href == null)? 0 :href.hashCode()));
-        temp = Double.doubleToLongBits(delayedStart);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
         return result;
     }
 
@@ -109,9 +81,6 @@ public class SoundCue
                 return false;
             }
         }
-        if (delayedStart!= other.delayedStart) {
-            return false;
-        }
         return true;
     }
 
@@ -124,18 +93,6 @@ public class SoundCue
      */
     public SoundCue withHref(final String href) {
         this.setHref(href);
-        return this;
-    }
-
-    /**
-     * fluent setter
-     * @see #setDelayedStart(double)
-     * 
-     * @param delayedStart
-     *     required parameter
-     */
-    public SoundCue withDelayedStart(final double delayedStart) {
-        this.setDelayedStart(delayedStart);
         return this;
     }
 
