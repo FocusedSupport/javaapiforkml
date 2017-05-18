@@ -6,10 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.xml.bind.JAXBException;
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.Test;
+import org.xml.sax.SAXException;
 
 import de.micromata.opengis.kml.v_2_2_0.Coordinate;
 import de.micromata.opengis.kml.v_2_2_0.Document;
@@ -125,7 +129,14 @@ public final class StressTest {
 		// measure the unmarshal part
 		stats.getTimeUnmarhsal().start();
 		// Kml.unmarshal(new File(filename), false);
-		Kml.unmarshal(out.toString());
+    try
+    {
+      Kml.unmarshal( out.toString() );
+    }
+    catch ( JAXBException | ParserConfigurationException | SAXException e )
+    {
+      e.printStackTrace();
+    }
 		stats.getTimeUnmarhsal().end();
 		return stats;
 	}

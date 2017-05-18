@@ -205,8 +205,8 @@ public class GroundOverlay
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
      *     
      */
@@ -219,8 +219,8 @@ public class GroundOverlay
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
      *     
      */
@@ -396,7 +396,7 @@ public class GroundOverlay
      * add a value to the groundOverlayObjectExtension property collection
      * 
      * @param groundOverlayObjectExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link LatLonQuad}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link LatLonQuad}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

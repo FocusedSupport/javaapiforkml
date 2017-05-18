@@ -1,11 +1,14 @@
 package de.micromata.jak.examples;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.List;
 
-import junit.framework.Assert;
+import javax.xml.bind.JAXBException;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.junit.Test;
+import org.xml.sax.SAXException;
 
 import de.micromata.opengis.kml.v_2_2_0.Boundary;
 import de.micromata.opengis.kml.v_2_2_0.Coordinate;
@@ -15,13 +18,23 @@ import de.micromata.opengis.kml.v_2_2_0.Kml;
 import de.micromata.opengis.kml.v_2_2_0.MultiGeometry;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
 import de.micromata.opengis.kml.v_2_2_0.Polygon;
+import junit.framework.Assert;
 
 public class CloneTest {
 
   @Test
   public void testClonePlacemark() {
     String path = "src/main/resources/exampledata/worldBorders.kml";
-    Kml kml = Kml.unmarshal(new File(path));
+    Kml kml = null;
+    try
+    {
+      kml = Kml.unmarshal( new File( path ) );
+    }
+    catch ( FileNotFoundException | JAXBException | ParserConfigurationException | SAXException e )
+    {
+      e.printStackTrace();
+      return;
+    }
     Document document = (Document) kml.getFeature();
     Folder folder = (Folder) document.getFeature().get(0);
     Placemark pm = (Placemark) folder.getFeature().get(17);

@@ -5,6 +5,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.xml.bind.JAXBException;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
+
 import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;
 import de.micromata.opengis.kml.v_2_2_0.Boundary;
 import de.micromata.opengis.kml.v_2_2_0.ColorMode;
@@ -30,7 +35,16 @@ double max = data.get("maximum");
 int minPolyHeight = 308000; // set a minimum height used by the 3D shapes
 int maxPolyHeight = 2692000; // real max = 3000000 - 308000 = 2692000
 
-Kml unmarshal = Kml.unmarshal(new File("src/main/resources/exampledata/worldBorders.kml"));
+    Kml unmarshal;
+    try
+    {
+      unmarshal = Kml.unmarshal( new File( "src/main/resources/exampledata/worldBorders.kml" ) );
+    }
+    catch ( JAXBException | ParserConfigurationException | SAXException e )
+    {
+      e.printStackTrace();
+      return;
+    }
 Document document = (Document) unmarshal.getFeature();
 document.setName("JAK Example3");
 Folder folder = (Folder) document.getFeature().get(0);

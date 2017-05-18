@@ -19,8 +19,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import javax.xml.bind.JAXBException;
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.junit.Ignore;
 import org.junit.Test;
+import org.xml.sax.SAXException;
 
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 
@@ -49,7 +53,16 @@ public class KmzTest {
 		kmlmain.marshalAsKmz("kmzFileMain3.kmz", kml1, kml2, kml3, kml4, kml5, kml6, kml7);
 		
 
-		Kml[] unmarshalKMZ = Kml.unmarshalFromKmz(new File("kmzFileMain3.kmz"));
+    Kml[] unmarshalKMZ = null;
+    try
+    {
+      unmarshalKMZ = Kml.unmarshalFromKmz( new File( "kmzFileMain3.kmz" ) );
+    }
+    catch ( JAXBException | ParserConfigurationException | SAXException e )
+    {
+      e.printStackTrace();
+      return;
+    }
 
 		for (Kml kml : unmarshalKMZ) {
 			String name = null;
@@ -75,8 +88,16 @@ public class KmzTest {
 
 	// @Test
 	public void tetetetetetet() throws FileNotFoundException {
-		Kml unmarshal = Kml
-		    .unmarshal("<?xml version=\"1.0\" encoding=\"UTF-8\"?><kml xmlns=\"http://www.opengis.net/kml/2.2\" xmlns:gx=\"http://www.google.com/kml/ext/2.2\" xmlns:kml=\"http://www.opengis.net/kml/2.2\" xmlns:atom=\"http://www.w3.org/2005/Atom\"><Placemark>	<name>London, UK</name>	<open>1</open>	<Point>		<coordinates>-0.126236,51.500152,0</coordinates>	</Point></Placemark></kml>");
+    Kml unmarshal;
+    try
+    {
+      unmarshal = Kml.unmarshal( "<?xml version=\"1.0\" encoding=\"UTF-8\"?><kml xmlns=\"http://www.opengis.net/kml/2.2\" xmlns:gx=\"http://www.google.com/kml/ext/2.2\" xmlns:kml=\"http://www.opengis.net/kml/2.2\" xmlns:atom=\"http://www.w3.org/2005/Atom\"><Placemark>	<name>London, UK</name>	<open>1</open>	<Point>		<coordinates>-0.126236,51.500152,0</coordinates>	</Point></Placemark></kml>" );
+    }
+    catch ( JAXBException | ParserConfigurationException | SAXException e )
+    {
+      e.printStackTrace();
+      return;
+    }
 		unmarshal.marshal(System.out);
 
 	}

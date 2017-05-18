@@ -215,17 +215,17 @@ public class Kml implements Cloneable
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Tour}{@code>}
-     *     {@code <}{@link Feature}{@code>}
-     *     {@code <}{@link NetworkLink}{@code>}
      *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Overlay}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
-     *     {@code <}{@link Placemark}{@code>}
-     *     {@code <}{@link Document}{@code>}
      *     {@code <}{@link ScreenOverlay}{@code>}
+     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link Container}{@code>}
      *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link Placemark}{@code>}
+     *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link Feature}{@code>}
+     *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link NetworkLink}{@code>}
      *     
      */
     public Feature getFeature() {
@@ -237,17 +237,17 @@ public class Kml implements Cloneable
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Tour}{@code>}
-     *     {@code <}{@link Feature}{@code>}
-     *     {@code <}{@link NetworkLink}{@code>}
      *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Overlay}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
-     *     {@code <}{@link Placemark}{@code>}
-     *     {@code <}{@link Document}{@code>}
      *     {@code <}{@link ScreenOverlay}{@code>}
+     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link Container}{@code>}
      *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link Placemark}{@code>}
+     *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link Feature}{@code>}
+     *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link NetworkLink}{@code>}
      *     
      */
     public void setFeature(Feature value) {
@@ -796,26 +796,17 @@ public class Kml implements Cloneable
      * all constraints defined in OGC's KML schema specification.
      * 
      */
-    public static Kml unmarshal(final File file, final boolean validate) {
-        try {
-            Unmarshaller unmarshaller = JAXBContext.newInstance((Kml.class)).createUnmarshaller();
-            if (validate == true) {
-                Kml.validate(unmarshaller);
-            }
-            InputSource input = new InputSource(new FileReader(file));
-            SAXSource saxSource = new SAXSource(new NamespaceFilterXMLReader(validate), input);
-            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(saxSource));
-            return jaxbRootElement;
-        } catch (SAXException _x) {
-            _x.printStackTrace();
-        } catch (ParserConfigurationException _x) {
-            _x.printStackTrace();
-        } catch (JAXBException _x) {
-            _x.printStackTrace();
-        } catch (FileNotFoundException _x) {
-            _x.printStackTrace();
+    public static Kml unmarshal(final File file, final boolean validate)
+        throws FileNotFoundException, JAXBException, ParserConfigurationException, SAXException
+    {
+        Unmarshaller unmarshaller = JAXBContext.newInstance((Kml.class)).createUnmarshaller();
+        if (validate == true) {
+            Kml.validate(unmarshaller);
         }
-        return null;
+        InputSource input = new InputSource(new FileReader(file));
+        SAXSource saxSource = new SAXSource(new NamespaceFilterXMLReader(validate), input);
+        Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(saxSource));
+        return jaxbRootElement;
     }
 
     /**
@@ -826,7 +817,9 @@ public class Kml implements Cloneable
      * with the exception that the File object is not validated (boolean is false). 
      * 
      */
-    public static Kml unmarshal(final File file) {
+    public static Kml unmarshal(final File file)
+        throws FileNotFoundException, JAXBException, ParserConfigurationException, SAXException
+    {
         return Kml.unmarshal(file, false);
     }
 
@@ -838,21 +831,14 @@ public class Kml implements Cloneable
      * 
      * 
      */
-    public static Kml unmarshal(final String content) {
-        try {
-            Unmarshaller unmarshaller = JAXBContext.newInstance((Kml.class)).createUnmarshaller();
-            InputSource input = new InputSource(new StringReader(content));
-            SAXSource saxSource = new SAXSource(new NamespaceFilterXMLReader(false), input);
-            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(saxSource));
-            return jaxbRootElement;
-        } catch (SAXException _x) {
-            _x.printStackTrace();
-        } catch (ParserConfigurationException _x) {
-            _x.printStackTrace();
-        } catch (JAXBException _x) {
-            _x.printStackTrace();
-        }
-        return null;
+    public static Kml unmarshal(final String content)
+        throws JAXBException, ParserConfigurationException, SAXException
+    {
+        Unmarshaller unmarshaller = JAXBContext.newInstance((Kml.class)).createUnmarshaller();
+        InputSource input = new InputSource(new StringReader(content));
+        SAXSource saxSource = new SAXSource(new NamespaceFilterXMLReader(false), input);
+        Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(saxSource));
+        return jaxbRootElement;
     }
 
     /**
@@ -863,21 +849,14 @@ public class Kml implements Cloneable
      * 
      * 
      */
-    public static Kml unmarshal(final InputStream content) {
-        try {
-            Unmarshaller unmarshaller = JAXBContext.newInstance((Kml.class)).createUnmarshaller();
-            InputSource input = new InputSource(content);
-            SAXSource saxSource = new SAXSource(new NamespaceFilterXMLReader(false), input);
-            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(saxSource));
-            return jaxbRootElement;
-        } catch (SAXException _x) {
-            _x.printStackTrace();
-        } catch (ParserConfigurationException _x) {
-            _x.printStackTrace();
-        } catch (JAXBException _x) {
-            _x.printStackTrace();
-        }
-        return null;
+    public static Kml unmarshal(final InputStream content)
+        throws JAXBException, ParserConfigurationException, SAXException
+    {
+        Unmarshaller unmarshaller = JAXBContext.newInstance((Kml.class)).createUnmarshaller();
+        InputSource input = new InputSource(content);
+        SAXSource saxSource = new SAXSource(new NamespaceFilterXMLReader(false), input);
+        Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(saxSource));
+        return jaxbRootElement;
     }
 
     /**
@@ -891,7 +870,7 @@ public class Kml implements Cloneable
     public static Kml[] unmarshalFromKmz(
         @NotNull
         File file)
-        throws IOException
+        throws IOException, JAXBException, ParserConfigurationException, SAXException
     {
         Kml[] EMPTY_KML_ARRAY = (new Kml[0]);
         if (!file.getName().endsWith(".kmz")) {

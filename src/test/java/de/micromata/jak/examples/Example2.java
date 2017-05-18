@@ -6,6 +6,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import javax.xml.bind.JAXBException;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
+
 import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;
 import de.micromata.opengis.kml.v_2_2_0.Boundary;
 import de.micromata.opengis.kml.v_2_2_0.ColorMode;
@@ -32,7 +37,16 @@ public class Example2 {
 		int minPolyHeight = 308000; // set a minimum height used by the 3D shapes
 		int maxPolyHeight = 2692000; // real max = 3000000 - 308000 = 2692000
 
-		Kml worldBorders = Kml.unmarshal(new File("src/main/resources/exampledata/worldBorders.kml"));
+    Kml worldBorders;
+    try
+    {
+      worldBorders = Kml.unmarshal( new File( "src/main/resources/exampledata/worldBorders.kml" ) );
+    }
+    catch ( JAXBException | ParserConfigurationException | SAXException e )
+    {
+      e.printStackTrace();
+      return;
+    }
 
 		Document document = (Document) worldBorders.getFeature().withName("JAK Example 2");
 		Folder rootFolder = document.createAndAddFolder().withName("choose").withStyleUrl("radioFolder");

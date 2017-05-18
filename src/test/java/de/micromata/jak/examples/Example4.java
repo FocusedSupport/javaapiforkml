@@ -8,6 +8,11 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.xml.bind.JAXBException;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
+
 import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;
 import de.micromata.opengis.kml.v_2_2_0.Boundary;
 import de.micromata.opengis.kml.v_2_2_0.ColorMode;
@@ -37,7 +42,16 @@ int minPolyHeight = 308000;
 int maxPolyHeight = 2692000; // real max = 3000000 - 308000 = 2692000
 
 String path = "src/main/resources/data/worldBorders.kml";
-Kml unmarshal = Kml.unmarshal(new File(path));
+    Kml unmarshal;
+    try
+    {
+      unmarshal = Kml.unmarshal( new File( path ) );
+    }
+    catch ( JAXBException | ParserConfigurationException | SAXException e )
+    {
+      e.printStackTrace();
+      return;
+    }
 
 Document document = (Document) unmarshal.getFeature();
 Folder oldFolder = (Folder) document.getFeature().get(0);
