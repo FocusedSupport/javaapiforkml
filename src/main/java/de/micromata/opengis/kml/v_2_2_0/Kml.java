@@ -215,16 +215,16 @@ public class Kml implements Cloneable
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link PhotoOverlay}{@code>}
-     *     {@code <}{@link Container}{@code>}
      *     {@code <}{@link GroundOverlay}{@code>}
-     *     {@code <}{@link Placemark}{@code>}
+     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link ScreenOverlay}{@code>}
+     *     {@code <}{@link Folder}{@code>}
      *     {@code <}{@link Overlay}{@code>}
      *     {@code <}{@link Feature}{@code>}
-     *     {@code <}{@link Tour}{@code>}
-     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link Container}{@code>}
+     *     {@code <}{@link Placemark}{@code>}
      *     {@code <}{@link NetworkLink}{@code>}
      *     
      */
@@ -237,16 +237,16 @@ public class Kml implements Cloneable
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link PhotoOverlay}{@code>}
-     *     {@code <}{@link Container}{@code>}
      *     {@code <}{@link GroundOverlay}{@code>}
-     *     {@code <}{@link Placemark}{@code>}
+     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link ScreenOverlay}{@code>}
+     *     {@code <}{@link Folder}{@code>}
      *     {@code <}{@link Overlay}{@code>}
      *     {@code <}{@link Feature}{@code>}
-     *     {@code <}{@link Tour}{@code>}
-     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link Container}{@code>}
+     *     {@code <}{@link Placemark}{@code>}
      *     {@code <}{@link NetworkLink}{@code>}
      *     
      */

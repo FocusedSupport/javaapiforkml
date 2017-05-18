@@ -862,8 +862,8 @@ public abstract class Feature
      * @return
      *     possible object is
      *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link AbstractView}{@code>}
+     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -876,8 +876,8 @@ public abstract class Feature
      * @param value
      *     allowed object is
      *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link AbstractView}{@code>}
+     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -889,9 +889,9 @@ public abstract class Feature
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link TimeSpan}{@code>}
-     *     {@code <}{@link TimePrimitive}{@code>}
      *     {@code <}{@link TimeStamp}{@code>}
+     *     {@code <}{@link TimePrimitive}{@code>}
+     *     {@code <}{@link TimeSpan}{@code>}
      *     
      */
     public TimePrimitive getTimePrimitive() {
@@ -903,9 +903,9 @@ public abstract class Feature
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link TimeSpan}{@code>}
-     *     {@code <}{@link TimePrimitive}{@code>}
      *     {@code <}{@link TimeStamp}{@code>}
+     *     {@code <}{@link TimePrimitive}{@code>}
+     *     {@code <}{@link TimeSpan}{@code>}
      *     
      */
     public void setTimePrimitive(TimePrimitive value) {
@@ -1499,7 +1499,7 @@ public abstract class Feature
      * add a value to the styleSelector property collection
      * 
      * @param styleSelector
-     *     Objects of the following type are allowed in the list: {@code <}{@link Style}{@code>}{@link JAXBElement}{@code <}{@link StyleSelector}{@code>}{@link JAXBElement}{@code <}{@link StyleMap}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Style}{@code>}{@link JAXBElement}{@code <}{@link StyleMap}{@code>}{@link JAXBElement}{@code <}{@link StyleSelector}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
